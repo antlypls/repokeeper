@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 f68a2afd95f3f385efa5e04f4e88d38d2d72236d Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145396 +0400	commit (initial): first
+f68a2afd95f3f385efa5e04f4e88d38d2d72236d b4fbedabf658ef2caf256c5f29c6d38fe81be562 Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145428 +0400	commit: second
+b4fbedabf658ef2caf256c5f29c6d38fe81be562 b4fbedabf658ef2caf256c5f29c6d38fe81be562 Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145453 +0400	checkout: moving from master to one
+b4fbedabf658ef2caf256c5f29c6d38fe81be562 b4fbedabf658ef2caf256c5f29c6d38fe81be562 Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145458 +0400	checkout: moving from one to two
+b4fbedabf658ef2caf256c5f29c6d38fe81be562 b4fbedabf658ef2caf256c5f29c6d38fe81be562 Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145462 +0400	checkout: moving from two to three
+b4fbedabf658ef2caf256c5f29c6d38fe81be562 b4fbedabf658ef2caf256c5f29c6d38fe81be562 Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145465 +0400	checkout: moving from three to four
+b4fbedabf658ef2caf256c5f29c6d38fe81be562 b4fbedabf658ef2caf256c5f29c6d38fe81be562 Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145469 +0400	checkout: moving from four to five
+b4fbedabf658ef2caf256c5f29c6d38fe81be562 b4fbedabf658ef2caf256c5f29c6d38fe81be562 Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145472 +0400	checkout: moving from five to six
+b4fbedabf658ef2caf256c5f29c6d38fe81be562 b4fbedabf658ef2caf256c5f29c6d38fe81be562 Anatoliy Plastinin <anatoliy.plastinin@gmail.com> 1392145508 +0400	checkout: moving from six to master

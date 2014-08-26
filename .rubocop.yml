@@ -1,0 +1,17 @@
+AllCops:
+  Include:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'repokeeper.gemspec'
+  Exclude:
+    - spec/**/*
+    - features/**/*
+
+SpecialGlobalVars:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false

@@ -1,0 +1,28 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = git@github.com:antlypls/many-branches-repo.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[branch "one"]
+	remote = origin
+	merge = refs/heads/one
+[branch "two"]
+	remote = origin
+	merge = refs/heads/two
+[branch "three"]
+	remote = origin
+	merge = refs/heads/three
+[branch "four"]
+	remote = origin
+	merge = refs/heads/four
+[branch "five"]
+	remote = origin
+	merge = refs/heads/five

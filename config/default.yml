@@ -1,0 +1,13 @@
+local_branches_count:
+  max_local_branches: 5
+
+remote_branches_count:
+  max_remote_branches: 5
+
+merge_commits:
+
+short_commit_message:
+  message_min_length: 10
+
+similar_commits:
+  min_edit_distance: 4
