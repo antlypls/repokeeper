@@ -32,8 +32,8 @@ module Repokeeper
 
     def self.merge_hashes(hash1, hash2)
       hash1.merge(hash2) do |_, oldval, newval|
-        old_hash = Hash(oldval)
-        new_hash = Hash(newval)
+        old_hash = oldval || {}
+        new_hash = newval || {}
 
         old_hash.merge(new_hash)
       end
