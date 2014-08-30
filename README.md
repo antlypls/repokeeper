@@ -1,5 +1,9 @@
 # Repokeeper
 
+[![Code Climate](https://codeclimate.com/github/antlypls/repokeeper/badges/gpa.svg)](https://codeclimate.com/github/antlypls/repokeeper)
+[![Build Status](https://travis-ci.org/antlypls/repokeeper.svg?branch=master)](https://travis-ci.org/antlypls/repokeeper)
+[![Coverage Status](https://coveralls.io/repos/antlypls/repokeeper/badge.png?branch=master)](https://coveralls.io/r/antlypls/repokeeper?branch=master)
+
 ## What's all this about?
 
 Repokeeper is a tool for git repositories analysis that highlights common
