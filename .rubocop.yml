@@ -7,11 +7,11 @@ AllCops:
     - spec/**/*
     - features/**/*
 
-SpecialGlobalVars:
+Style/Documentation:
   Enabled: false
 
-Documentation:
+Style/ClassAndModuleChildren:
   Enabled: false
 
-ClassAndModuleChildren:
+Style/Encoding:
   Enabled: false

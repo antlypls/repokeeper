@@ -1,17 +1,10 @@
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 require 'cucumber/rake/task'
+require 'rubocop/rake_task'
 
 RSpec::Core::RakeTask.new(:spec)
 Cucumber::Rake::Task.new(:cucumber)
+RuboCop::RakeTask.new
 
-begin
-  require 'rubocop/rake_task'
-  RuboCop::RakeTask.new
-rescue LoadError
-  task :rubocop do
-    $stderr.puts 'Rubocop is disabled'
-  end
-end
-
-task default: [:spec, :cucumber]
+task default: [:spec, :cucumber, :rubocop]
