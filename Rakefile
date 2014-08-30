@@ -1,7 +1,9 @@
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
+require 'cucumber/rake/task'
 
 RSpec::Core::RakeTask.new(:spec)
+Cucumber::Rake::Task.new(:cucumber)
 
 begin
   require 'rubocop/rake_task'
@@ -12,5 +14,4 @@ rescue LoadError
   end
 end
 
-# task default: [:spec, :rubocop]
-task default: :spec
+task default: [:spec, :cucumber]
