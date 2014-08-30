@@ -9,5 +9,5 @@ group :test do
   gem 'aruba'
 
   gem 'rubocop', '>= 0.24', require: false
-  gem 'simplecov', require: false
+  gem 'coveralls', require: false
 end
