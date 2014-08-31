@@ -9,10 +9,6 @@
 Repokeeper is a tool for git repositories analysis that highlights common
 flaws/bad practices in a workflow.
 
-## Flaws in workflow? What does it mean?
-
-Flaws commonly seen in repository management.
-
 ## Why do I need a tool for this?
 
 There are many tools for static code analysis like rubocop, flay, flog,
