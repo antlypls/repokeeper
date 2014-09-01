@@ -20,7 +20,6 @@ commits merged into master branch is a bad idea).
 By using Repokeeper, you can explore what was wrong in project's history, and
 then adjust your process accordingly.
 
-
 Problems with project management usually leave traces in repository history and
 structure.
 For instance, a rush in delivery of features to production can lead to debugging
@@ -96,6 +95,15 @@ from current directory even if it exists.
 
 If you are annoyed by tons of merge commits warnings, you can disable it,
 by `enabled: false` option in config file.
+
+## Can I specify which commits to analyze?
+
+By default repokeeper analyzes commits reachable from `HEAD`.
+But you can use `-r` option to specify revisions to analyze:
+
+* `-r rev1` analyze commits that are reachable from `rev1`
+* `-r rev1..rev2` analyze commits that are reachable from `rev2` but exclude
+  those that are reachable from `rev1`.
 
 ## More fun with custom formatters
 
