@@ -1,8 +1,8 @@
 # Repokeeper
 
-[![Code Climate](https://codeclimate.com/github/antlypls/repokeeper/badges/gpa.svg)](https://codeclimate.com/github/antlypls/repokeeper)
-[![Build Status](https://travis-ci.org/antlypls/repokeeper.svg?branch=master)](https://travis-ci.org/antlypls/repokeeper)
-[![Coverage Status](https://coveralls.io/repos/antlypls/repokeeper/badge.png?branch=master)](https://coveralls.io/r/antlypls/repokeeper?branch=master)
+[![Code Climate](http://img.shields.io/codeclimate/github/antlypls/repokeeper.svg?style=flat)](https://codeclimate.com/github/antlypls/repokeeper)
+[![Build Status](http://img.shields.io/travis/antlypls/repokeeper.svg?style=flat)](https://travis-ci.org/antlypls/repokeeper)
+[![Coverage Status](http://img.shields.io/coveralls/antlypls/repokeeper.svg?style=flat)](https://coveralls.io/r/antlypls/repokeeper)
 
 ## What's all this about?
 
