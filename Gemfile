@@ -8,6 +8,6 @@ group :test do
   gem 'rspec-collection_matchers'
   gem 'aruba'
 
-  gem 'rubocop', '>= 0.25', require: false
+  gem 'rubocop', '>= 0.26', require: false
   gem 'coveralls', require: false
 end

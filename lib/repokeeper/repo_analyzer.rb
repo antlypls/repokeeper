@@ -30,7 +30,7 @@ module Repokeeper
     def enabled_analyzers(collection)
       collection
         .map { |analyzer_class| instantiate_analyzer(analyzer_class) }
-        .select { |analyzer| analyzer.enabled? }
+        .select(&:enabled?)
     end
 
     def enabled_commits_analyzers
