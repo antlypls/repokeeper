@@ -15,3 +15,6 @@ Style/ClassAndModuleChildren:
 
 Style/Encoding:
   Enabled: false
+
+Style/MultilineOperationIndentation:
+  Enabled: false
