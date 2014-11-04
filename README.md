@@ -178,13 +178,9 @@ And everything is ready to run:
 You know what to do.
 But don't forget to run `repokeeper` against your new commits ;)
 
-## Contact
+## Credits
 
-Anatoliy Plastinin
-
-- http://github.com/antlypls
-- http://twitter.com/antlypls
-- hello@antlypls.com
+Repokeeper is by [Anatoliy Plastinin](http://antlypls.com).
 
 ## License
 
