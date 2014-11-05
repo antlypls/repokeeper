@@ -6,5 +6,5 @@ ENV['PATH'] = "#{bin_dir}#{File::PATH_SEPARATOR}#{ENV['PATH']}"
 
 # increase timeout to avoid timeouts when run with rbx
 Before do
-  @aruba_timeout_seconds = 5
+  @aruba_timeout_seconds = 10
 end
