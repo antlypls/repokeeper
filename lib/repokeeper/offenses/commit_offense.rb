@@ -1,6 +1,6 @@
 module Repokeeper
   module Offenses
-    class CommitOffense < Struct.new(:commit, :message, :analyzer_name)
+    CommitOffense = Struct.new(:commit, :message, :analyzer_name) do
       # we want Array(offense) to return [offense]
       undef_method :to_a
     end

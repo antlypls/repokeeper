@@ -2,7 +2,6 @@ AllCops:
   Include:
     - 'Gemfile'
     - 'Rakefile'
-    - 'repokeeper.gemspec'
   Exclude:
     - spec/**/*
     - features/**/*
