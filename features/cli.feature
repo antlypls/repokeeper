@@ -7,7 +7,7 @@ Feature: The executable works
 
       Repokeeper checks your repo for flaws
 
-      v0.0.2
+      v0.0.3
 
       Options:
           -h, --help                       Show command line help
@@ -27,5 +27,5 @@ Feature: The executable works
     When I run `repokeeper --version`
     Then the output should contain:
       """
-      repokeeper version 0.0.2
+      repokeeper version 0.0.3
       """
