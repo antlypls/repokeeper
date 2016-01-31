@@ -23,7 +23,7 @@ DESCR
   spec.executables   = spec.files.grep(/^bin\//) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'rugged', '~> 0.21'
+  spec.add_dependency 'rugged', '~> 0.21.0'
   spec.add_dependency 'methadone'
   spec.add_dependency 'levenshtein-ffi', '~> 1.1.0'
 
