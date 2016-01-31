@@ -17,3 +17,6 @@ Style/Encoding:
 
 Style/MultilineOperationIndentation:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
