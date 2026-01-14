@@ -5,9 +5,10 @@ module Repokeeper
   class RepoProxy
     # Walks specified range
     class BoundedWalker < SimpleDelegator
-      def initialize(walker, rev_range)
+      def initialize(walker, rev_range, repo)
         super(walker)
         @rev_range = rev_range
+        @repo = repo
         configure_walker
       end
 
@@ -15,8 +16,12 @@ module Repokeeper
 
       def configure_walker
         sorting(Rugged::SORT_TOPO)
-        push(@rev_range.end_rev)
-        hide(@rev_range.start_rev) if @rev_range.start_rev
+        push(resolve_ref(@rev_range.end_rev))
+        hide(resolve_ref(@rev_range.start_rev)) if @rev_range.start_rev
+      end
+
+      def resolve_ref(ref)
+        @repo.rev_parse_oid(ref)
       end
     end
 
@@ -52,7 +57,7 @@ module Repokeeper
 
     def create_walker(rev_range)
       walker = Rugged::Walker.new(@repo)
-      BoundedWalker.new(walker, rev_range)
+      BoundedWalker.new(walker, rev_range, @repo)
     end
   end
 end

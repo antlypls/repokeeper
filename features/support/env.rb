@@ -1,10 +1,13 @@
 require 'aruba/cucumber'
 require 'fileutils'
 
-bin_dir = File.expand_path(File.dirname(__FILE__) + '/../../bin')
+bin_dir = File.expand_path('../../bin', __dir__)
 ENV['PATH'] = "#{bin_dir}#{File::PATH_SEPARATOR}#{ENV['PATH']}"
 
-# increase timeout to avoid timeouts when run with rbx
-Before do
-  @aruba_timeout_seconds = 10
+Aruba.configure do |config|
+  config.exit_timeout = 10
+  config.io_wait_timeout = 2
 end
+
+# Make current_dir available in step definitions
+World(Aruba::Api)

@@ -1,6 +1,8 @@
+require 'yaml'
+
 module Repokeeper
   class Config
-    HOME_DIR = File.expand_path('../../../', __FILE__)
+    HOME_DIR = File.expand_path('../..', __dir__)
     CONFIG_DIR = File.join(HOME_DIR, 'config')
     DEFAULT_CONFIG = File.join(CONFIG_DIR, 'default.yml')
 
@@ -26,7 +28,7 @@ module Repokeeper
 
     def self.read_configuration_file(file_path)
       return {} unless file_path
-      YAML.load_file(file_path)
+      YAML.safe_load_file(file_path, permitted_classes: [], permitted_symbols: [], aliases: false)
     end
     private_class_method :read_configuration_file
 
@@ -38,6 +40,6 @@ module Repokeeper
         old_hash.merge(new_hash)
       end
     end
-    private_class_method :read_configuration_file
+    private_class_method :merge_hashes
   end
 end

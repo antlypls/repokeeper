@@ -1,59 +1,71 @@
-require 'methadone'
+require 'thor'
 
 module Repokeeper
-  class CLI
-    include Methadone::Main
-    include Methadone::CLILogging
+  class CLI < Thor
+    package_name 'repokeeper'
 
-    version VERSION, compact: true
-    description 'Repokeeper checks your repo for flaws'
+    def self.exit_on_failure?
+      true
+    end
 
-    arg :path, :optional,
-        'path to repo to analyze, current dir if not specified'
+    desc 'analyze [PATH]', 'Analyze a git repository for common workflow flaws'
+    option :rev_range, aliases: '-r', desc: 'Revisions to analyze by commits analyzers'
+    option :config, aliases: '-c', desc: 'Configuration file path'
+    option :require, desc: 'File to require'
+    option :formatter, desc: 'Formatter class name'
 
-    on '-r REV_RANGE', '--rev-range',
-       'Revisions to analyze by commits analyzers'
-
-    on '-c CONFIG_FILE', '--config',
-       'Configuration file'
-
-    on '--require REQUIRE_FILE',
-       'File to require'
-
-    on '--formatter FORMATTER_CLASS',
-       'Formatter class'
-
-    main do |path|
-      file_to_require = options['require']
+    def analyze(path = '.')
+      file_to_require = options[:require]
       require file_to_require if file_to_require
 
-      formatter_class = formatter_class_by_name(options['formatter'])
-
-      config_file = options['config']
+      formatter_class = formatter_class_by_name(options[:formatter])
+      config_file = options[:config]
       repo_analyzer = create_analyzer(path, config_file, formatter_class)
-      range = rev_range(options['rev-range'])
+      range = rev_range(options[:rev_range])
       repo_analyzer.analyze(range)
     end
 
-    def self.formatter_class_by_name(name)
+    desc 'version', 'Print version information'
+    def version
+      puts "repokeeper #{VERSION}"
+    end
+
+    default_task :analyze
+
+    map %w[--version -v] => :version
+
+    # Handle unknown arguments as paths for the analyze command
+    def self.start(given_args = ARGV, config = {})
+      # If first argument exists and is not a known command or flag, treat it as path for analyze
+      if given_args.any? && !given_args.first.start_with?('-')
+        first_arg = given_args.first
+        unless %w[analyze version help tree].include?(first_arg) || first_arg.start_with?('-')
+          # Looks like a path, prepend 'analyze'
+          given_args = ['analyze'] + given_args
+        end
+      end
+      super(given_args, config)
+    end
+
+    private
+
+    def formatter_class_by_name(name)
       if name && !name.empty?
-        const_get(name)
+        Object.const_get(name)
       else
         SimpleTextFormatter
       end
     end
 
-    def self.create_analyzer(path, config_file, formatter_class)
+    def create_analyzer(path, config_file, formatter_class)
       formatter = formatter_class.new
-
       analyzers = Analyzers::Analyzer.all
-
       proxy = RepoProxy.new(path)
       config = Config.read(config_file)
       RepoAnalyzer.new(proxy, formatter, analyzers, config)
     end
 
-    def self.rev_range(rev_spec)
+    def rev_range(rev_spec)
       parser = RevParser.new(rev_spec)
       parser.parse
       parser.range

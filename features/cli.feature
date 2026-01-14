@@ -1,31 +1,32 @@
 Feature: The executable works
   Scenario: shows help info
-    When I run `repokeeper -h`
+    When I run `repokeeper help`
     Then the output should contain:
       """
-      Usage: repokeeper [options] [path]
+      repokeeper commands:
+        repokeeper analyze [PATH]  # Analyze a git repository for common workflow flaws
+        repokeeper help [COMMAND]  # Describe available commands or one specific command
+      """
 
-      Repokeeper checks your repo for flaws
-
-      v0.0.3
+  Scenario: shows analyze help
+    When I run `repokeeper help analyze`
+    Then the output should contain:
+      """
+      Usage:
+        repokeeper analyze [PATH]
 
       Options:
-          -h, --help                       Show command line help
-              --version                    Show help/version info
-          -r, --rev-range REV_RANGE        Revisions to analyze by commits analyzers
-          -c, --config CONFIG_FILE         Configuration file
-              --require REQUIRE_FILE       File to require
-              --formatter FORMATTER_CLASS  Formatter class
+        -r, [--rev-range=REV_RANGE]  # Revisions to analyze by commits analyzers
+        -c, [--config=CONFIG]        # Configuration file path
+            [--require=REQUIRE]      # File to require
+            [--formatter=FORMATTER]  # Formatter class name
 
-      Arguments:
-
-          path
-              path to repo to analyze, current dir if not specified (optional)
+      Analyze a git repository for common workflow flaws
       """
 
   Scenario: shows version
     When I run `repokeeper --version`
     Then the output should contain:
       """
-      repokeeper version 0.0.3
+      repokeeper 0.1.0
       """

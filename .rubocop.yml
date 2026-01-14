@@ -1,22 +1,31 @@
 AllCops:
-  Include:
-    - 'Gemfile'
-    - 'Rakefile'
+  TargetRubyVersion: 3.3
+  NewCops: enable
+  SuggestExtensions: false
   Exclude:
-    - spec/**/*
-    - features/**/*
+    - 'vendor/**/*'
+    - 'tmp/**/*'
 
 Style/Documentation:
   Enabled: false
 
-Style/ClassAndModuleChildren:
-  Enabled: false
-
-Style/Encoding:
-  Enabled: false
-
-Style/MultilineOperationIndentation:
-  Enabled: false
-
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 100
+  Exclude:
+    - 'spec/**/*'
+    - 'features/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'features/**/*'
+    - '*.gemspec'
+
+Metrics/MethodLength:
+  Max: 15
+
+Gemspec/DevelopmentDependencies:
   Enabled: false

@@ -19,7 +19,7 @@ module SpecHelpers
       end
     end
 
-    FIXTURE_DIR = File.expand_path('../../../fixtures', __FILE__)
+    FIXTURE_DIR = File.expand_path('../../fixtures', __dir__)
 
     def init_test_repo(repo_name)
       @_test_repo_path = Dir.mktmpdir('repokeeper_test')

@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        ruby-version: ['3.3', '3.4']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install libgit2 dependencies (Ubuntu)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y cmake pkg-config libssl-dev libssh2-1-dev
+
+      - name: Install libgit2 dependencies (macOS)
+        if: runner.os == 'macOS'
+        run: brew install cmake pkg-config openssl libssh2
+
+      - name: Set up Ruby ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Run RSpec tests
+        run: bundle exec rspec --format documentation
+
+      - name: Run Cucumber tests
+        run: bundle exec cucumber --format progress
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install libgit2 dependencies
+        run: sudo apt-get update && sudo apt-get install -y cmake pkg-config libssl-dev libssh2-1-dev
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+
+      - name: Run RuboCop
+        run: bundle exec rubocop
