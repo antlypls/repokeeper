@@ -1,5 +1,5 @@
 def clean_dir(dir)
-  FileUtils.remove_dir(dir) if File.exist?(dir)
+  FileUtils.rm_rf(dir)
 end
 
 def clean_working_dir

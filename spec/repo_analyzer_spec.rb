@@ -7,9 +7,9 @@ describe Repokeeper::RepoAnalyzer do
   let(:analyzers_set) { Repokeeper::Analyzers::AnalyzersSet.new(analyzers) }
   let(:config) { Repokeeper::Config.read }
 
-  subject(:analyzer) {
+  subject(:analyzer) do
     described_class.new(repo_proxy, formatter, analyzers_set, config)
-  }
+  end
 
   context 'commits level analyzers' do
     let(:dummy_analyzer) { double('dummy_analyzer', type: :commit).as_null_object }

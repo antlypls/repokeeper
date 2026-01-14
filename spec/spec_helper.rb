@@ -12,8 +12,8 @@ require 'repokeeper'
 
 require 'rspec/collection_matchers'
 
-Dir[File.join(__dir__, 'support/**/*.rb')].sort.each { |f| require f }
-Dir[File.join(__dir__, 'analyzers/shared_examples/**/*.rb')].sort.each { |f| require f }
+Dir[File.join(__dir__, 'support/**/*.rb')].each { |f| require f }
+Dir[File.join(__dir__, 'analyzers/shared_examples/**/*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
   config.include SpecHelpers::FakeCommit

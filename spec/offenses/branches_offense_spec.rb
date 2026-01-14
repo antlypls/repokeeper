@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe Repokeeper::Offenses::BranchesOffense do
-  let(:branches) { %w(master feature) }
+  let(:branches) { %w[master feature] }
 
-  subject(:offense) {
+  subject(:offense) do
     described_class.new(branches, 'message', 'analyzer_name')
-  }
+  end
 
   it 'has message attribute' do
     expect(offense.message).to eq('message')

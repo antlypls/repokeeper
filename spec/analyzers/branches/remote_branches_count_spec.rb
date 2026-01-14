@@ -15,7 +15,7 @@ describe Repokeeper::Analyzers::RemoteBranchesCount do
     subject(:result) { analyzer.analyze(repo_proxy) }
 
     context 'when repo has number of remote branches less than a threshold ' do
-      let(:remote_branches) { %w(origin/master) }
+      let(:remote_branches) { %w[origin/master] }
 
       it 'returns nil' do
         expect(result).to be_nil
@@ -23,9 +23,9 @@ describe Repokeeper::Analyzers::RemoteBranchesCount do
     end
 
     context 'repo contains many remote branches, more than a threshold' do
-      let(:remote_branches) {
-        %w(HEAD one two three four five).map { |b| "origin/#{b}" }
-      }
+      let(:remote_branches) do
+        %w[HEAD one two three four five].map { |b| "origin/#{b}" }
+      end
 
       it 'result returns offense with bracnhes info' do
         expect(result.branches).to have(remote_branches.count).items

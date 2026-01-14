@@ -71,7 +71,7 @@ describe Repokeeper::SimpleTextFormatter do
 
   def fake_branches_results(message)
     result_class = Struct.new(:branches, :message, :analyzer_name)
-    result_class.new(%w(master feature), message, analyzer_name)
+    result_class.new(%w[master feature], message, analyzer_name)
   end
 
   def fake_commit_results(message)

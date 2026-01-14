@@ -12,9 +12,9 @@ describe Repokeeper::Analyzers::SimilarCommits do
 
   describe '#process_commit' do
     let(:old_commit) { fake_commit(message: old_commit_message) }
-    let(:new_commit) {
+    let(:new_commit) do
       fake_commit(message: new_commit_message, parents: [old_commit])
-    }
+    end
 
     subject(:result) { analyzer.process_commit(new_commit) }
 

@@ -8,6 +8,7 @@ module Repokeeper::Analyzers
     end
 
     def self.inherited(subclass)
+      super
       @all << subclass
     end
 
@@ -20,7 +21,7 @@ module Repokeeper::Analyzers
     end
 
     def enabled?
-      @config.fetch('enabled') { true }
+      @config.fetch('enabled', true)
     end
   end
 end

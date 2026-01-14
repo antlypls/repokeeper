@@ -15,7 +15,7 @@ describe Repokeeper::Analyzers::LocalBranchesCount do
     subject(:result) { analyzer.analyze(repo_proxy) }
 
     context 'when repo has number of local branches less than a threshold ' do
-      let(:local_branches) { %w(master) }
+      let(:local_branches) { %w[master] }
 
       it 'returns nil' do
         expect(result).to be_nil
@@ -23,7 +23,7 @@ describe Repokeeper::Analyzers::LocalBranchesCount do
     end
 
     context 'repo contains many local branches, more than a threshold' do
-      let(:local_branches) { %w(one two three four five six) }
+      let(:local_branches) { %w[one two three four five six] }
 
       it 'returns offense with bracnhes info' do
         expect(result.branches).to have(local_branches.count).items

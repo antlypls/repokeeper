@@ -44,7 +44,7 @@ module Repokeeper
           given_args = ['analyze'] + given_args
         end
       end
-      super(given_args, config)
+      super
     end
 
     private

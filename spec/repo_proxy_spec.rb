@@ -35,7 +35,7 @@ describe Repokeeper::RepoProxy do
 
     it 'returns a list of local branches' do
       expect(proxy.local_branches)
-        .to match_array(%w(five four master one six three two))
+        .to match_array(%w[five four master one six three two])
     end
   end
 
@@ -44,14 +44,14 @@ describe Repokeeper::RepoProxy do
 
     it 'returns a list of remote branches' do
       expect(proxy.remote_branches)
-        .to match_array(%w(
+        .to match_array(%w[
           origin/five
           origin/four
           origin/master
           origin/one
           origin/three
           origin/two
-      ))
+        ])
     end
   end
 end

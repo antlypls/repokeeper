@@ -28,6 +28,7 @@ module Repokeeper
 
     def self.read_configuration_file(file_path)
       return {} unless file_path
+
       YAML.safe_load_file(file_path, permitted_classes: [], permitted_symbols: [], aliases: false)
     end
     private_class_method :read_configuration_file

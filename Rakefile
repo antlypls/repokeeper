@@ -7,4 +7,4 @@ RSpec::Core::RakeTask.new
 Cucumber::Rake::Task.new
 RuboCop::RakeTask.new
 
-task default: [:spec, :cucumber, :rubocop]
+task default: %i[spec cucumber rubocop]

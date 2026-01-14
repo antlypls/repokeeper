@@ -3,9 +3,9 @@ require 'spec_helper'
 describe Repokeeper::Offenses::CommitOffense do
   let(:commit) { fake_commit }
 
-  subject(:offense) {
+  subject(:offense) do
     described_class.new(commit, 'message', 'analyzer_name')
-  }
+  end
 
   it 'has message attribute' do
     expect(offense.message).to eq('message')

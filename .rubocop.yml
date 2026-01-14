@@ -29,3 +29,31 @@ Metrics/MethodLength:
 
 Gemspec/DevelopmentDependencies:
   Enabled: false
+
+Gemspec/RequireMFA:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/AccessorGrouping:
+  Enabled: false
+
+Style/ArgumentsForwarding:
+  Enabled: false
+
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+Layout/SpaceAroundOperators:
+  Exclude:
+    - '*.gemspec'
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Layout/FirstArrayElementIndentation:
+  Enabled: false
