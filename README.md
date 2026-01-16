@@ -180,4 +180,4 @@ Repokeeper is by [Anatoliy Plastinin](http://antlypls.com).
 
 ## License
 
-See `LICENSE`
+MIT License. See `LICENSE` for details.

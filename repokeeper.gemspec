@@ -13,11 +13,11 @@ Gem::Specification.new do |spec|
     for common flaws in a workflow.
   DESCR
   spec.homepage      = 'https://github.com/antlypls/repokeeper'
-  spec.license       = 'GPL-3.0'
+  spec.license       = 'MIT'
 
   spec.required_ruby_version = '>= 3.3.0'
 
-  spec.files         = %w[README.md LICENSE GPLv3]
+  spec.files         = %w[README.md LICENSE]
   spec.files         += Dir.glob('lib/**/*.rb')
   spec.files         += Dir.glob('bin/**/*')
   spec.files         += Dir.glob('config/**/*')
